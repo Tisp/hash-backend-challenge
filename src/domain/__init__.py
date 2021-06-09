@@ -1,2 +1,2 @@
-from .product import Product
-from .cart import Cart
+from .modules.cart import Cart
+from .modules.product import Product
