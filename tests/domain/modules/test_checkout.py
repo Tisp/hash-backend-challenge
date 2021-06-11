@@ -2,7 +2,7 @@ from src.domain import Checkout, Product
 
 
 class TestProduct:
-    def test_product_model_init(self):
+    def test_checkout_model_init(self):
         product = Product(
             amount=1200,
             description="Some Description",
