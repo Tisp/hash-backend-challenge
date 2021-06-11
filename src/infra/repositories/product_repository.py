@@ -1,10 +1,12 @@
 import json
 from typing import Union
+
+from src.data.contracts import ProductRepositoryContract
 from src.domain import Product
 import pathlib
 
 
-class ProductRepository:
+class ProductRepository(ProductRepositoryContract):
     def __init__(self):
         self.__products = {}
         for product in ProductRepository.__load_product_file():
