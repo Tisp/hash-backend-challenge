@@ -1,2 +1,2 @@
-from .modules.cart import Cart
+from .modules.checkout import Checkout
 from .modules.product import Product

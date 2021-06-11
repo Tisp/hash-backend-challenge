@@ -1,4 +1,4 @@
-from src.domain import Cart, Product
+from src.domain import Checkout, Product
 
 
 class TestProduct:
@@ -10,14 +10,14 @@ class TestProduct:
             title="Some title",
             id=12,
         )
-        cart = Cart(
+        checkout = Checkout(
             total_amount=1000,
             total_discount=100,
             total_amount_with_discount=900,
             products=[product],
         )
 
-        assert cart.total_amount == 1000
-        assert cart.total_discount == 100
-        assert cart.total_amount_with_discount == 900
-        assert cart.products == [product]
+        assert checkout.total_amount == 1000
+        assert checkout.total_discount == 100
+        assert checkout.total_amount_with_discount == 900
+        assert checkout.products == [product]

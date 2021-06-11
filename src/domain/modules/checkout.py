@@ -4,9 +4,7 @@ from .product import Product
 
 
 @dataclass(frozen=True)
-class Cart:
-    """Cart Model"""
-
+class Checkout:
     total_amount: int
     total_amount_with_discount: int
     total_discount: int
