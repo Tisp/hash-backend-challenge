@@ -45,11 +45,10 @@ def repository_without_discount():
 class TestProductDiscount:
     def test_apply_discount(self, checkout, repository):
         product_discount = ProductDiscount(
-            checkout,
             repository,
         )
 
-        product_discount.apply_sales_rule()
+        product_discount.apply_sales_rule(checkout)
 
         assert checkout.total_amount == 1000
         assert checkout.total_discount == 50
@@ -58,11 +57,10 @@ class TestProductDiscount:
 
     def test_without_discount(self, checkout, repository_without_discount):
         product_discount = ProductDiscount(
-            checkout,
             repository_without_discount,
         )
 
-        product_discount.apply_sales_rule()
+        product_discount.apply_sales_rule(checkout)
 
         assert checkout.total_amount == 1000
         assert checkout.total_discount == 0

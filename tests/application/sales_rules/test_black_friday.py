@@ -36,20 +36,18 @@ def repository():
 class TestBlackFriday:
     def test_append_gift(self, checkout, repository):
         black_friday = BlackFriday(
-            checkout,
             repository,
             black_friday_date=datetime.now().today().strftime("%Y-%m-%d"),
         )
-        black_friday.apply_sales_rule()
+        black_friday.apply_sales_rule(checkout)
 
         assert len(checkout.products) == 2
 
     def test_today_is_not_black_friday(self, checkout, repository):
         black_friday = BlackFriday(
-            checkout,
             repository,
             black_friday_date=(datetime.now() - timedelta(1)).strftime("%Y-%m-%d"),
         )
-        black_friday.apply_sales_rule()
+        black_friday.apply_sales_rule(checkout)
 
         assert len(checkout.products) == 1
