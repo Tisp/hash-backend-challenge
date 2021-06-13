@@ -1,1 +1,2 @@
+from .discount_repository import DiscountRepository
 from .product_repository import ProductRepository
