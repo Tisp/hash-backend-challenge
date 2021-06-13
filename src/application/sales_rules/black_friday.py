@@ -2,14 +2,14 @@ from src.application.sales_rules.constracts import SalesRulesContract
 from src.domain import Checkout, CheckoutProduct
 from datetime import datetime
 from src.config import BLACK_FRIDAY_DATE
-from src.infra.repositories import ProductRepository
+from src.data.contracts import ProductRepositoryContract
 
 
 class BlackFriday(SalesRulesContract):
     def __init__(
         self,
         checkout: Checkout,
-        product_repository: ProductRepository,
+        product_repository: ProductRepositoryContract,
         black_friday_date=None,
     ):
         self.__checkout = checkout

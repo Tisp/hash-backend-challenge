@@ -1,10 +1,12 @@
 from src.application.sales_rules.constracts import SalesRulesContract
+from src.data.contracts.discount_repository_contract import DiscountRepositoryContract
 from src.domain import Checkout
-from src.infra.repositories import DiscountRepository
 
 
 class ProductDiscount(SalesRulesContract):
-    def __init__(self, checkout: Checkout, discount_repository: DiscountRepository):
+    def __init__(
+        self, checkout: Checkout, discount_repository: DiscountRepositoryContract
+    ):
         self.__checkout = checkout
         self.__discount_repository = discount_repository
 
