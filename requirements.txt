@@ -7,6 +7,8 @@ click==8.0.1
 distlib==0.3.2
 filelock==3.0.12
 flake8==3.9.2
+grpcio==1.38.0
+grpcio-tools==1.38.0
 identify==2.2.10
 iniconfig==1.1.1
 isort==5.8.0
@@ -18,6 +20,7 @@ packaging==20.9
 pathspec==0.8.1
 pluggy==0.13.1
 pre-commit==2.13.0
+protobuf==3.17.3
 py==1.10.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
