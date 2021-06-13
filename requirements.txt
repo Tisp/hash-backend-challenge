@@ -4,6 +4,7 @@ attrs==21.2.0
 black==21.5b2
 cfgv==3.3.0
 click==8.0.1
+coverage==5.5
 distlib==0.3.2
 filelock==3.0.12
 flake8==3.9.2
@@ -31,6 +32,7 @@ pyflakes==2.3.1
 pylint==2.8.3
 pyparsing==2.4.7
 pytest==6.2.4
+pytest-flask==1.2.0
 PyYAML==5.4.1
 regex==2021.4.4
 six==1.16.0
