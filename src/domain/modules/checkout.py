@@ -12,7 +12,7 @@ class CheckoutProduct:
     is_gift: bool
 
 
-@dataclass(frozen=True)
+@dataclass
 class Checkout:
     total_amount: int
     total_amount_with_discount: int

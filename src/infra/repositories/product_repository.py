@@ -10,7 +10,7 @@ class ProductRepository(ProductRepositoryContract):
     def __init__(self):
         self.__products = {}
         for product in ProductRepository.__load_product_file():
-            self.__products[product["id"]] = product
+            self.__products[product["id"]] = Product(**product)
 
     @classmethod
     def __load_product_file(cls):
@@ -22,4 +22,10 @@ class ProductRepository(ProductRepositoryContract):
         product = self.__products.get(product_id)
         if not product:
             return None
-        return Product(**product)
+        return product
+
+    def get_gift_product(self) -> Union[Product, None]:
+        for product in self.__products.values():
+            if product.is_gift:
+                return product
+        return None
