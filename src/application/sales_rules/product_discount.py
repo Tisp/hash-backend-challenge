@@ -9,8 +9,10 @@ class ProductDiscount(SalesRulesContract):
 
     def apply_sales_rule(self, checkout: Checkout):
         for product in checkout.products:
-            discount_percentage = self.__discount_repository.get_discount(product.id)
-            product.discount = round(discount_percentage * product.total_amount)
-            print(discount_percentage, product.discount)
-            checkout.total_discount += product.discount
-            checkout.total_amount_with_discount -= product.discount
+            if not product.is_gift:
+                discount_percentage = self.__discount_repository.get_discount(
+                    product.id
+                )
+                product.discount = round(discount_percentage * product.total_amount)
+                checkout.total_discount += product.discount
+                checkout.total_amount_with_discount -= product.discount

@@ -1,5 +1,5 @@
 from src.domain import Product
-from src.infra.repositories import ProductRepository
+from src.infra.repositories import ProductRepository, ProductNotFound
 import pytest
 
 
@@ -20,5 +20,5 @@ class TestProductRepository:
         assert product.description == "Deleniti beatae porro."
 
     def test_get_product_not_fount(self, repository):
-        product = repository.get_product(1000000)
-        assert product is None
+        with pytest.raises(ProductNotFound):
+            repository.get_product(1000000)
