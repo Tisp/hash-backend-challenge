@@ -14,6 +14,7 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     """Development configuration"""
 
+    JSONIFY_PRETTYPRINT_REGULAR = True
     ENV = "development"
     DEBUG = True
 

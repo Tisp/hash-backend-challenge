@@ -5,3 +5,12 @@ services:
     image: hashorg/hash-mock-discount-service
     ports:
       - 50051:50051
+  hash-checkout-service:
+    container_name: hash-checkout-service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - FLASK_ENV=${FLASK_ENV}
+    ports:
+      - 9091:9091
